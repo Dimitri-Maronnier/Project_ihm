@@ -15,7 +15,7 @@
 
 	<nav class="navbar navbar-inverse navbar-fixed-top">
 		<div class="container-fluid">
-			<a class="navbar-brand" href="#">Gamiato</a>
+			<a class="navbar-brand" href="index.html">Gamiato</a>
 			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 				<ul class="nav navbar-nav">
 					<li><a href="#">Categorie 1 <span class="sr-only">(current)</span></a></li>
@@ -39,36 +39,57 @@
 			</div>
 		</div>
 	</nav> 
-
-	<div class="containerAllArticle">
-		<div class = "containerArticle">
-			<aside class="aside1">02/12/2016.</aside>
-
-				<header>Test de FFXV</header>
-				<img src="ffxv.jpg" alt="FFXV View">
-				<article>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Nam cursus. Morbi ut mi. Nullam enim leo, egestas id, condimentum at, laoreet mattis, massa. 
-				Sed eleifend nonummy diam. Praesent mauris ante, elementum et, bibendum at, posuere sit amet, nibh. Duis tincidunt lectus quis dui viverra vestibulum. 
-				Suspendisse vulputate aliquam dui. Nulla elementum dui ut augue. Aliquam vehicula mi at mauris. Maecenas placerat, nisl at consequat rhoncus, sem nunc 
-				gravida justo, quis eleifend arcu velit quis lacus. Morbi magna magna, tincidunt a, mattis non, imperdiet vitae, tellus. Sed odio est, auctor ac, 
-				sollicitudin in, consequat vitae, orci. Fusce id felis. Vivamus sollicitudin metus eget eros.Pellentesque habitant morbi tristique senectus et netus et 
-				malesuada fames ac turpis egestas. In posuere felis nec tortor. Pellentesque faucibus. Ut accumsan ultricies elit. Maecenas at justo id velit placerat 
-				molestie. Donec dictum lectus non odio. Cras a ante vitae enim iaculis aliquam. Mauris nunc quam, venenatis nec, euismod sit amet, egestas placerat, est.
-				Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Cras id elit. Integer quis urna. Ut ante enim, dapibus malesuada,
-				fringilla eu, condimentum quis, tellus. Aenean porttitor eros vel dolor. Donec convallis pede venenatis nibh. Duis quam. Nam eget lacus. Aliquam erat volutpat.
-				Quisque dignissim congue leo. </article>
-
+	<div class="containerAll">
+		<div class="scroller">
+			<script type="text/javascript" src="jquery-3.1.1.min.js"></script>
+			<script src="scrollIndex.js"></script>
+			<div id="test" style="background:#98bf21;height:100px;width:100px;"></div>
 		</div>
 
-		<div class = "containerArticle">
-			<aside class="aside1">25/11/2016.</aside>
+		<div class="containerAllSub ">
+			<div class="containerAllArticle col-xs-12 col-md-8 ">
+				<div class = "containerArticle" onclick="articleClick()">
+					<aside class="aside1">02/12/2016.</aside>
 
-				<header>News Dishonored2</header>
-				<img src="d2.jpg" alt="FFXV View">
-				<article>Lorem ipsum Qui deserunt proident ea adipisicing irure minim consequat laboris deserunt aliquip dolore cillum id eu velit nisi in labore ex dolor laborum adipisicing minim irure id adipisicing incididunt dolore Ut irure sed nostrud magna laborum in Ut eu dolore ea exercitation aliqua aliqua dolor in non Ut nulla id id ut sint ullamco dolore ullamco nisi dolore eu ex dolore dolor esse fugiat irure mollit anim qui esse exercitation labore veniam in nostrud velit voluptate in ea qui reprehenderit magna sint tempor magna nisi minim in ea culpa ullamco ad ut officia sed sed consectetur esse mollit labore culpa sit laborum deserunt elit ullamco ut exercitation nisi enim cupidatat adipisicing nisi ut veniam exercitation fugiat commodo in consequat tempor velit in eiusmod adipisicing commodo aliqua occaecat non eu sunt irure aute proident velit aliqua quis aliqua do commodo sed veniam aliqua nisi velit ut ad Excepteur nulla magna officia dolor sint. </article>
+						<header>Test de FFXV</header>
+						<img src="ffxv.jpg" alt="FFXV View">
+						<article>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Nam cursus. Morbi ut mi. Nullam enim leo, egestas id, condimentum at, laoreet mattis, massa. 
+						Sed eleifend nonummy diam. Praesent mauris ante, elementum et, bibendum at, posuere sit amet, nibh. Duis tincidunt lectus quis dui viverra vestibulum. 
+						Suspendisse vulputate aliquam dui. Nulla elementum dui ut augue. Aliquam vehicula mi at mauris. Maecenas placerat, nisl at consequat rhoncus, sem nunc 
+						gravida justo, quis eleifend arcu velit quis lacus. Morbi magna magna, tincidunt a, mattis non, imperdiet vitae, tellus. Sed odio est, auctor ac, 
+						sollicitudin in, consequat vitae, orci. Fusce id felis. Vivamus sollicitudin metus eget eros.Pellentesque habitant morbi tristique senectus et netus et 
+						malesuada fames ac turpis egestas. In posuere felis nec tortor. Pellentesque faucibus. Ut accumsan ultricies elit. Maecenas at justo id velit placerat 
+						molestie. Donec dictum lectus non odio. Cras a ante vitae enim iaculis aliquam. Mauris nunc quam, venenatis nec, euismod sit amet, egestas placerat, est.
+						Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Cras id elit. Integer quis urna. Ut ante enim, dapibus malesuada,
+						fringilla eu, condimentum quis, tellus. Aenean porttitor eros vel dolor. Donec convallis pede venenatis nibh. Duis quam. Nam eget lacus. Aliquam erat volutpat.
+						Quisque dignissim congue leo. </article>
 
+				</div>
+
+				<div class = "containerArticle">
+					<aside class="aside1">25/11/2016.</aside>
+
+						<header>News Dishonored2</header>
+						<img src="d2.jpg" alt="FFXV View">
+						<article>Lorem ipsum Qui deserunt proident ea adipisicing irure minim consequat laboris deserunt aliquip dolore cillum id eu velit nisi in labore ex dolor laborum adipisicing minim irure id adipisicing incididunt dolore Ut irure sed nostrud magna laborum in Ut eu dolore ea exercitation aliqua aliqua dolor in non Ut nulla id id ut sint ullamco dolore ullamco nisi dolore eu ex dolore dolor esse fugiat irure mollit anim qui esse exercitation labore veniam in nostrud velit voluptate in ea qui reprehenderit magna sint tempor magna nisi minim in ea culpa ullamco ad ut officia sed sed consectetur esse mollit labore culpa sit laborum deserunt elit ullamco ut exercitation nisi enim cupidatat adipisicing nisi ut veniam exercitation fugiat commodo in consequat tempor velit in eiusmod adipisicing commodo aliqua occaecat non eu sunt irure aute proident velit aliqua quis aliqua do commodo sed veniam aliqua nisi velit ut ad Excepteur nulla magna officia dolor sint. </article>
+
+				</div>
+			</div>
+
+			<div class="usefulLink col-xs-6 col-md-4" >
+				Useful Link
+			</div>
 		</div>
 	</div>
 
+    <footer class="footer">
+      <div class="container">
+        <p class="text-muted">Place sticky footer content here.</p>
+      </div>
+    </footer>
+
 </body>
+
+
 
 </html>

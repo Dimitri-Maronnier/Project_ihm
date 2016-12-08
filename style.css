@@ -1,10 +1,21 @@
 body{
 
-	margin-top: 25%;
-	margin-bottom: 25%;
+	margin-top: 10%;
 
 }
 
+.containerAll{
+	display:flex;
+	flex-direction: column;
+	justify-content: center;
+	margin-bottom: 5%;
+}
+
+.containerAllSub{
+	display :flex;
+	flex-direction: row;
+
+}
 
 .containerAllArticle{
 	margin:25%;
@@ -41,7 +52,13 @@ body{
 	background: #009AFFFF;
 }
 
+.nav.navbar-nav li a {
+    color: black;
+}
 
+.nav.navbar-nav.navbar-right li a {
+    color: black;
+}
 
 .active{
 	background: #0048FFFF;
@@ -83,4 +100,21 @@ article{
 	order:3;
 	text-align: center;
 	padding-top: 25px;
+}
+
+.scroller{
+	text-align: center;
+	align-self: center;
+	margin-bottom: 25px;
+}
+
+.usefulLink{
+	text-align: center;
+	align-self: flex-start;
+	background: #009AFFFF;
+	border: 1px solid #555;
+}
+
+footer{
+	background: #009AFFFF;
 }
