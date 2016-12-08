@@ -14,12 +14,13 @@ body{
 .containerAllSub{
 	display :flex;
 	flex-direction: row;
+	align-items:stretch;
 
 }
 
 .containerAllArticle{
 	margin:25%;
-
+	margin-right: 10%;
 	display :flex;
 	flex-direction: column;
     justify-content: center;
@@ -113,6 +114,9 @@ article{
 	align-self: flex-start;
 	background: #009AFFFF;
 	border: 1px solid #555;
+	height:500px;
+	width:400px;
+
 }
 
 footer{
