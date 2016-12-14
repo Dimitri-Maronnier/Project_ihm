@@ -19,5 +19,5 @@ $(document).ready(function(){
 });
 
 function articleClick(){
-	 window.location.href = "http://www.google.com";
+	 window.location.href = "GamePage.html";
 }
