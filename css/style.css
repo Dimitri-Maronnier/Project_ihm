@@ -110,12 +110,18 @@ body{
     font-family: "Title Pixel", Verdana, Arial, sans-serif;
     color: #ffcc00;
 }
-/**
-    Carousel
-    ____________________________________________________________________________
- */
-/* CUSTOMIZE THE CAROUSEL
+
+/* CAROUSEL
 -------------------------------------------------- */
+/* Regles pour eviter les interférences avec le menu */
+.navbar-wrapper > .container {
+    padding-right: 0;
+    padding-left: 0;
+}
+
+.navbar-wrapper .navbar .container {
+    width: auto;
+}
 
 /* Carousel base class */
 .carousel {
