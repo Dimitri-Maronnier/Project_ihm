@@ -13,15 +13,21 @@
 <body>
 <div id="includeHeader"></div>
 
-<?php
-		if(isset($_GET['video']))
-		{
-			$video=$_GET['video'];
-			echo ' <iframe width="620" height="360" src="https://www.youtube.com/embed/'.$video.'" frameborder="0" allowfullscreen ></iframe>'; 
-		}
 
-?>
+<div class="container jumbotron">
+    <?php
+    		if(isset($_GET['video']))
+    		{
+    			$video=$_GET['video'];
+    			echo ' <iframe width="620" height="360" src="https://www.youtube.com/embed/'.$video.'" frameborder="0" allowfullscreen ></iframe>'; 
+    		}
 
+    ?>
+</div>
+
+<div class="container jumbotron">
+
+</div>
 
 <!-- Chargement des scripts -->
 <script type="text/javascript" src="js/vendor/jquery-3.1.1.min.js"></script>

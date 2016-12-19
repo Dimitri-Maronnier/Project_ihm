@@ -11,7 +11,9 @@
     <title> Gamiato </title>
 </head>
 <body>
-<div id="includeHeader"></div>
+    <?php
+    include_once 'header.php';
+    ?>
 
 
 
@@ -71,6 +73,27 @@
                 Lorem ipsum Sit incididunt deserunt mollit et ullamco aute tempor sed non sunt esse reprehenderit est velit adipisicing consectetur veniam non aliqua adipisicing sint nostrud dolore eiusmod id sed qui proident ullamco nostrud nostrud velit veniam aliqua veniam voluptate aliquip sit reprehenderit sed culpa ea exercitation adipisicing enim velit elit in dolor minim ex in dolor velit Ut proident sunt id adipisicing qui ut adipisicing proident nulla minim voluptate aliqua reprehenderit ut in proident occaecat enim occaecat incididunt cupidatat dolore est veniam in fugiat cupidatat incididunt occaecat ut amet proident quis pariatur in ea nulla tempor aliqua anim voluptate eu cillum esse dolor nulla sunt officia in dolore proident qui veniam sit amet consequat aliquip officia proident magna tempor minim sit quis ea sed aliqua sint est officia nostrud tempor fugiat sunt in exercitation culpa quis fugiat sit ea tempor ea non magna incididunt ex ullamco nulla velit non.Lorem ipsum In sunt in et tempor velit magna aliqua culpa tempor voluptate sed quis dolore reprehenderit adipisicing esse et officia cillum cillum qui aliquip dolore tempor Excepteur ea sunt consectetur quis sed consectetur cupidatat anim dolore eiusmod deserunt sint sit sint Ut tempor esse ad eiusmod exercitation et incididunt consequat veniam nisi occaecat nostrud non elit culpa culpa pariatur dolore dolor aute est eu dolore id mollit cupidatat commodo ut anim aliqua adipisicing quis in labore nisi ex sunt deserunt consectetur occaecat incididunt proident mollit commodo do sint adipisicing dolor culpa sint Excepteur elit elit non qui cillum Duis et occaecat qui cillum sit nulla laborum pariatur ex ad nisi exercitation ad occaecat magna dolore fugiat non velit enim ea exercitation Ut voluptate nulla Excepteur non anim sint cillum in ex elit sunt anim nostrud minim commodo quis mollit aliquip fugiat aliquip mollit occaecat aute. Lorem ipsum Dolor quis labore ut tempor adipisicing elit occaecat Ut tempor ad in qui nisi cupidatat sunt ea tempor officia consequat culpa commodo magna ex sit ea incididunt sunt proident ut nisi dolore nostrud laboris incididunt do exercitation commodo anim sed dolore fugiat proident non proident aliqua irure consequat deserunt tempor consectetur reprehenderit nulla aliqua est do ea officia cupidatat in laborum voluptate dolor exercitation et dolore ut commodo ex adipisicing reprehenderit ad nulla qui eiusmod Excepteur dolore non adipisicing elit est sit proident eu nulla in ullamco ullamco enim esse qui quis mollit veniam incididunt in velit nostrud aute pariatur dolore ullamco Duis voluptate do nulla elit esse tempor deserunt ut reprehenderit do Duis dolore commodo irure aliquip anim in eu et fugiat ea culpa reprehenderit in culpa dolore ad sed commodo laboris dolor sed magna laboris aute in do ex in pariatur nostrud culpa occaecat do fugiat commodo culpa deserunt aliqua et deserunt adipisicing fugiat ad sint in tempor nulla Excepteur non consequat qui tempor nisi non elit consectetur proident irure tempor quis pariatur nostrud ullamco minim anim do laboris occaecat est qui elit ex elit tempor in anim nostrud dolor proident velit nostrud esse nulla occaecat Excepteur aliquip cupidatat esse id labore amet culpa amet fugiat consequat cupidatat dolore sint sint ut ut reprehenderit proident exercitation occaecat elit in labore in enim.
                 Lorem ipsum Sit incididunt deserunt mollit et ullamco aute tempor sed non sunt esse reprehenderit est velit adipisicing consectetur veniam non aliqua adipisicing sint nostrud dolore eiusmod id sed qui proident ullamco nostrud nostrud velit veniam aliqua veniam voluptate aliquip sit reprehenderit sed culpa ea exercitation adipisicing enim velit elit in dolor minim ex in dolor velit Ut proident sunt id adipisicing qui ut adipisicing proident nulla minim voluptate aliqua reprehenderit ut in proident occaecat enim occaecat incididunt cupidatat dolore est veniam in fugiat cupidatat incididunt occaecat ut amet proident quis pariatur in ea nulla tempor aliqua anim voluptate eu cillum esse dolor nulla sunt officia in dolore proident qui veniam sit amet consequat aliquip officia proident magna tempor minim sit quis ea sed aliqua sint est officia nostrud tempor fugiat sunt in exercitation culpa quis fugiat sit ea tempor ea non magna incididunt ex ullamco nulla velit non.</article>
             </div>
+
+            <div id="sectionNews" class="tab-pane fade container article-container tab-container">
+                <?php
+                $reponse = $mysql->query('SELECT * FROM article WHERE 1 ORDER BY date DESC');
+                 while ($donnees = $reponse->fetch())
+                {
+                    if($donnees['game'] == "Final Fantasy 7" and $donnees['type'] == "new"){
+                        echo '<div class = "container article-container-lil" id="1" onclick="articleClick()">';
+                        echo '<aside class="aside1">' . htmlspecialchars(utf8_encode($donnees['date'])).'</aside>';
+
+                        echo '<header>' . htmlspecialchars(utf8_encode($donnees['title'])).'</header>';
+                        echo '<img src="img/' . htmlspecialchars(utf8_encode($donnees['img'])).'" alt="Art view">';
+                        echo '<article class="article-min">' . htmlspecialchars(utf8_encode(substr($donnees['content'],0,100))).'</article>';
+
+                        echo '</div>';
+                    }
+                }
+                ?>
+
+            </div>
+
 
             <div id="sectionVideo" class="tab-pane fade container article-container">
         

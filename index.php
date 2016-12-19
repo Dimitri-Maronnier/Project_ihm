@@ -12,7 +12,9 @@
     <title> Gamiato </title>
 </head>
 <body>
-<div id="includeHeader"></div>
+    <?php
+    include_once 'header.php';
+    ?>
 <!-- Carousel
     ================================================== -->
 <div id="landCarousel" class="carousel slide" data-ride="carousel">
@@ -39,7 +41,7 @@
                 <div class="carousel-caption">
                     <h1 class="title">Test de FFXV</h1>
                     <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
-                    <p><a class="btn btn-lg btn-primary" href="GamePage.html" role="button">Learn more</a></p>
+                    <p><a class="btn btn-lg btn-primary" href="gamePage.php" role="button">Learn more</a></p>
                 </div>
             </div>
         </div>
@@ -63,36 +65,37 @@
         <span class="sr-only">Next</span>
     </a>
 </div><!-- /.carousel -->
+
+
+
 <div class="container" id="main-container">
 
     <div class="container" id="sub-container">
         <div class="container" id="all-article-container">
-            <div class = "container article-container" id="1" onclick="articleClick()">
-                <aside class="aside1">02/12/2016.</aside>
 
-                <header>Test de FFXV</header>
-                <img src="img/ffxv.jpg" alt="FFXV View">
-                <article>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Nam cursus. Morbi ut mi. Nullam enim leo, egestas id, condimentum at, laoreet mattis, massa.
-                    Sed eleifend nonummy diam. Praesent mauris ante, elementum et, bibendum at, posuere sit amet, nibh. Duis tincidunt lectus quis dui viverra vestibulum.
-                    Suspendisse vulputate aliquam dui. Nulla elementum dui ut augue. Aliquam vehicula mi at mauris. Maecenas placerat, nisl at consequat rhoncus, sem nunc
-                    gravida justo, quis eleifend arcu velit quis lacus. Morbi magna magna, tincidunt a, mattis non, imperdiet vitae, tellus. Sed odio est, auctor ac,
-                    sollicitudin in, consequat vitae, orci. Fusce id felis. Vivamus sollicitudin metus eget eros.Pellentesque habitant morbi tristique senectus et netus et
-                    malesuada fames ac turpis egestas. In posuere felis nec tortor. Pellentesque faucibus. Ut accumsan ultricies elit. Maecenas at justo id velit placerat
-                    molestie. Donec dictum lectus non odio. Cras a ante vitae enim iaculis aliquam. Mauris nunc quam, venenatis nec, euismod sit amet, egestas placerat, est.
-                    Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Cras id elit. Integer quis urna. Ut ante enim, dapibus malesuada,
-                    fringilla eu, condimentum quis, tellus. Aenean porttitor eros vel dolor. Donec convallis pede venenatis nibh. Duis quam. Nam eget lacus. Aliquam erat volutpat.
-                    Quisque dignissim congue leo. </article>
+            <?php
+            $reponse = $mysql->query('SELECT * FROM article WHERE 1 ORDER BY date DESC');
+             while ($donnees = $reponse->fetch())
+            {
+                echo '<div class = "container article-container" id="1"">';
+                echo '<aside class="aside1">' . htmlspecialchars(utf8_encode($donnees['date'])).'</aside>';
 
-            </div>
+                echo '<header>' . htmlspecialchars(utf8_encode($donnees['title'])).'</header>';
+                echo '<img src="img/' . htmlspecialchars(utf8_encode($donnees['img'])).'" alt="Art view">';
+                echo '<article class="article">' . htmlspecialchars(utf8_encode(substr($donnees['content'],0,900))).'</article>';
+                if($donnees['type']=="new"){
+                    echo '<form action="articlePage.php?id='.$donnees['id'].'" method="post">';
+                }else{
+                    echo '<form action="gamePage.php?game='.$donnees['game'].'" method="post">';
+                }
+                echo '<button type="submit" class="btn btn-lg btn-primary btn-block" >Learn More</button>';
+                echo'</form>';
+                echo '</div>';
+            }
+            ?>
 
-            <div class = "container article-container"  id="2" onclick="articleClick()">
-                <aside class="aside1">25/11/2016.</aside>
 
-                <header>News Dishonored2</header>
-                <img src="img/d2.jpg" alt="FFXV View">
-                <article>Lorem ipsum Qui deserunt proident ea adipisicing irure minim consequat laboris deserunt aliquip dolore cillum id eu velit nisi in labore ex dolor laborum adipisicing minim irure id adipisicing incididunt dolore Ut irure sed nostrud magna laborum in Ut eu dolore ea exercitation aliqua aliqua dolor in non Ut nulla id id ut sint ullamco dolore ullamco nisi dolore eu ex dolore dolor esse fugiat irure mollit anim qui esse exercitation labore veniam in nostrud velit voluptate in ea qui reprehenderit magna sint tempor magna nisi minim in ea culpa ullamco ad ut officia sed sed consectetur esse mollit labore culpa sit laborum deserunt elit ullamco ut exercitation nisi enim cupidatat adipisicing nisi ut veniam exercitation fugiat commodo in consequat tempor velit in eiusmod adipisicing commodo aliqua occaecat non eu sunt irure aute proident velit aliqua quis aliqua do commodo sed veniam aliqua nisi velit ut ad Excepteur nulla magna officia dolor sint. </article>
-
-            </div>
+     
         </div>
 
         <div class="container" id="hot-news">

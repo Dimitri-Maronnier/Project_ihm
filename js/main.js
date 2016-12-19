@@ -1,7 +1,3 @@
-$(function(){
-    $("#includeHeader").load("header.php");
-});
-
 $(document).ready(function(){
     /* Pour que nos menus se déroulent lorsque la souris passe dessus */
     if (window.innerWidth > 767){
@@ -23,5 +19,5 @@ $(document).ready(function(){
 });
 
 function articleClick(){
-	 window.location.href = "GamePage.html";
+	 window.location.href = "gamePage.php";
 }

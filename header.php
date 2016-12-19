@@ -10,12 +10,12 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand title" href="index.html">Gamiato</a>
+            <a class="navbar-brand title" href="index.php">Gamiato</a>
         </div>
 
         <div class="collapse navbar-collapse" id="liste-cate-nav">
             <ul class="nav navbar-nav">
-                <li class="active"><a href="index.html">Home<span class="sr-only"></span></a></li>
+                <li class="active"><a href="index.php">Home<span class="sr-only"></span></a></li>
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="true">Game<span class="caret"></span></a>
                     <ul class="dropdown-menu">
