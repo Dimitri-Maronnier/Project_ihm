@@ -36,16 +36,37 @@
 
             <div class="bs-example">
                 <ul class="nav nav-tabs" id="myTab">
-                    <li><a href="#sectionProfil">Profil</a></li>
-                    <li ><a href="#sectionReview">Review</a></li>
-                    <li class="active"><a href="#sectionTest">Test</a></li>
+                    <?php
+                    if(isset($_GET['target']) and $_GET['target'] == "profil" ){
+                        echo '<li class="active"><a href="#sectionProfil">Profil</a></li>';
+                    }else{
+                        echo '<li><a href="#sectionProfil">Profil</a></li>';
+                    }
+                    if(isset($_GET['target']) and $_GET['target'] == "review" ){
+                        echo '<li class="active"><a href="#sectionReview">Review</a></li>';
+                    }else{
+                        echo '<li><a href="#sectionReview">Review</a></li>';
+                    }
+                    if(isset($_GET['target']) and $_GET['target'] == "test" ){
+                        echo '<li class="active"><a href="#sectionTest">Test</a></li>';
+                    }else{
+                        echo '<li><a href="#sectionTest">Test</a></li>';
+                    }                        
+                    ?>   
                     <li><a href="#sectionNews">News</a></li>
                     <li><a href="#sectionVideo">Video</a></li>
+    
+                    
                 </ul>
             </div>
             <div class="tab-content">
-
-                <div id="sectionProfil" class="tab-pane fade container article-container">
+                <?php
+                if(isset($_GET['target']) and $_GET['target'] == "profil" ){
+                    echo '<div id="sectionProfil" class="tab-pane fade in active container article-container">';
+                }else{
+                    echo '<div id="sectionProfil" class="tab-pane fade container article-container">';
+                }
+                ?>
                     <?php
                     echo '<img src="img/'.$donnees['cover'].'" alt="cover" width="25%" height="25%">';
                     ?>
@@ -72,26 +93,37 @@
                         </tbody>
                     </table>
                 </div>
-
-                <div id="sectionReview" class="tab-pane fade container article-container">
+                <?php
+                if(isset($_GET['target']) and $_GET['target'] == "review" ){
+                    echo '<div id="sectionReview" class="tab-pane fade in active container article-container">';
+                }else{
+                    echo '<div id="sectionReview" class="tab-pane fade container article-container">';
+                }
+                ?>
                     <?php
                     if($review != null){
                         echo '<aside class="aside1">'.$review['date'].'</aside>';
 
-                        echo '<article>'.$review['content'].'</article>';
+                        echo '<article>'.htmlspecialchars(utf8_encode($review['content'])).'</article>';
                      }else{
                         echo "<article>This game isn't got a review yet</article>";
                      
                     }
                     ?>
                 </div>
-
-                <div id="sectionTest" class="tab-pane fade in active container article-container">
+                <?php
+                if(isset($_GET['target']) and $_GET['target'] == "test" ){
+                     echo '<div id="sectionTest" class="tab-pane fade in active container article-container">';
+                }else{
+                     echo '<div id="sectionTest" class="tab-pane fade container article-container">';
+                }
+                ?>
+               
                     <?php
                     if($test != null){
                         echo '<aside class="aside1">'.$test['date'].'</aside>';
 
-                        echo '<article>'.$test['content'].'</article>';
+                        echo '<article>'.htmlspecialchars(utf8_encode($test['content'])).'</article>';
                     }else{
                         echo "<article>This game isn't got a test yet</article>";
                     }
@@ -104,14 +136,17 @@
                      while ($n_donnees = $reponse->fetch())
                     {
                         if($n_donnees['game'] == $game and $n_donnees['type'] == "new"){
-                            echo '<div class = "container article-container-lil" id="1" onclick="articleClick()">';
+                            echo '<div class = "container article-container-lil" id="1">';
                             echo '<aside class="aside1">' . htmlspecialchars(utf8_encode($n_donnees['date'])).'</aside>';
 
                             echo '<header>' . htmlspecialchars(utf8_encode($n_donnees['title'])).'</header>';
                             echo '<img src="img/' . htmlspecialchars(utf8_encode($n_donnees['img'])).'" alt="Art view">';
                             echo '<article class="article-min">' . htmlspecialchars(utf8_encode(substr($n_donnees['content'],0,100))).'</article>';
-
+                            echo '<form action="articlePage.php?id='.$n_donnees['id'].'" method="post">';
+                            echo '<button type="submit" class="btn btn-lg btn-primary btn-block" >Learn More</button>';
+                            echo '</form>';
                             echo '</div>';
+
                         }
                     }
                     ?>
@@ -144,7 +179,7 @@
                 {
                     if($gr_donnees['type'] == $donnees['type'] or $gr_donnees['developer'] == $donnees['developer'] ){
                         echo '<div class = "container">';
-                            echo '<a href="gamePage.php?game='.$gr_donnees['title'].'"><img class="relatedImg" src="img/'.$gr_donnees['cover'].'" alt="Icnone" width="25%" height="25%"></a> ';
+                            echo '<a href="gamePage.php?game='.$gr_donnees['title'].'&target=profil"><img class="relatedImg" src="img/'.$gr_donnees['cover'].'" alt="Icnone" width="25%" height="25%"></a> ';
                             echo '<header>'.$gr_donnees['title'].'</header>';
                         echo '</div>';
                     }

@@ -86,7 +86,7 @@
                 if($donnees['type']=="new"){
                     echo '<form action="articlePage.php?id='.$donnees['id'].'" method="post">';
                 }else{
-                    echo '<form action="gamePage.php?game='.$donnees['game'].'" method="post">';
+                    echo '<form action="gamePage.php?game='.$donnees['game'].'&target='.$donnees['type'].'" method="post">';
                 }
                 echo '<button type="submit" class="btn btn-lg btn-primary btn-block" >Learn More</button>';
                 echo'</form>';

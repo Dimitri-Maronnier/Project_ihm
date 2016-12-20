@@ -38,7 +38,7 @@
                         <li><a href="#">Sales</a></li>
                     </ul>
                 </li>
-                <li><a href="#">Bundle</a></li>
+                <li><a href="bundles.php">Bundle</a></li>
                 <li><a href="#">Forum</a></li>
             </ul>
 
