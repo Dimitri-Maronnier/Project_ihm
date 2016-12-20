@@ -44,7 +44,7 @@
 				//On affecte a Session[use] username et a Session[rank] la valeur retourner par login
 				$_SESSION['user'] =$username;
 				$_SESSION['rank']=login($username, $password, $mysql);
-				echo '<meta http-equiv="refresh" content="0; url=index.html">';		
+				echo '<meta http-equiv="refresh" content="0; url=index.php">';		
 				
 			}
 			else
