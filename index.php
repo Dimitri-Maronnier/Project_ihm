@@ -82,7 +82,7 @@
 
                 echo '<header>' . htmlspecialchars(utf8_encode($donnees['title'])).'</header>';
                 echo '<img src="img/' . htmlspecialchars(utf8_encode($donnees['img'])).'" alt="Art view">';
-                echo '<article class="article">' . htmlspecialchars(utf8_encode(substr($donnees['content'],0,900))).'</article>';
+                echo '<article class="article-min">' . htmlspecialchars(utf8_encode(substr($donnees['content'],0,900))).'</article>';
                 if($donnees['type']=="new"){
                     echo '<form action="articlePage.php?id='.$donnees['id'].'" method="post">';
                 }else{
