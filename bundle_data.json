@@ -1,0 +1,74 @@
+[
+  {
+    "title":"Humble bundle : Neil Gaiman",
+    "type":"books",
+    "content" : [
+      {"cTitle":"Adventure in the dream"},
+      {"cTitle":"Gods & Tulips"},
+      {"cTitle":"Free Speeches"},
+      {"cTitle":"Ghastly Beyond Belief"}
+    ],
+    "timeLeft": "07:23:47:56",
+    "site":"humbleBundle",
+    "imgPath": "img/defaultBundle.png",
+    "link" : "https://www.humblebundle.com/books/neil-gaiman-book-bundle"
+  },
+  {
+    "title":"Humble bundle : Tycoon Simulator bundle",
+    "type":"games",
+    "content" : [
+      {"cTitle":"Train Simulator 2016"},
+      {"cTitle":"RollerCoaster Tycoon : Deluxe"},
+      {"cTitle":"Out of the Park Baseball 17"},
+      {"cTitle":"Democracy 3 Collector's Edition"}
+    ],
+    "timeLeft": "02:10:21:18",
+    "site":"humbleBundle",
+    "imgPath": "img/defaultBundle.png",
+    "link" : "https://www.humblebundle.com/tycoon-simulator-bundle"
+  },
+  {
+    "title":"Bundle Stars : Baldur's Gate: The Complete Saga ",
+    "type":"games",
+    "content" : [
+      {"cTitle":"Baldur's Gate : Enhanced Edition"},
+      {"cTitle":"Baldur's Gate II: Enhanced Edition"},
+      {"cTitle":"Baldur's Gate : Siege of Dragonspear DLC"}
+    ],
+    "timeLeft": "07:00:00:00",
+    "site":"bundleStars",
+    "imgPath": "img/bundleStars.jpg",
+    "link" : "https://www.bundlestars.com/en/bundle/baldurs-gate-the-complete-saga"
+  },
+  {
+    "title":"Stacksocial : Graphics & FX Mastery Bundle ",
+    "type":"courses",
+    "content" : [
+      {"cTitle":"Introduction to Game Development Using C++ and DirectX"},
+      {"cTitle":"Unity 5 : Develop 2D & 3D Games"},
+      {"cTitle":"Creating Games in Unity Tutorials"},
+      {"cTitle":"SilhouetteFX : Intermediate Training"},
+      {"cTitle":"SilhouetteFX : Advanced Training"}
+    ],
+    "timeLeft": "01:12:21:00",
+    "site":"stackSocial",
+    "imgPath": "img/stacksocial.jpg",
+    "link" : "https://stacksocial.com/sales/pay-what-you-want-game-development-bundle"
+  },
+  {
+    "title":"Humble Bundle : Code Your Own Games",
+    "type":"courses",
+    "content" : [
+      {"cTitle":"Swift Game Programming for Absolute Beginners"},
+      {"cTitle":"Beginning RPG Maker MV"},
+      {"cTitle":"Beginning Swift Games Development for iOS"},
+      {"cTitle":"Pro HTML5 Games"},
+      {"cTitle":"Beginning Java Game Development with LibGDX"},
+      {"cTitle":"Polished Game Development: From First Steps to Final Release"}
+    ],
+    "timeLeft": "08:04:16:10",
+    "site":"humbleBundle",
+    "imgPath": "img/defaultBundle.png",
+    "link" : "https://www.humblebundle.com/books/code-your-own-games-book-bundle#heading-logo"
+  }
+]
