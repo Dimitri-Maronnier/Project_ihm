@@ -50,6 +50,7 @@
 
             //initialisation de la variable rang de l'utilisateur
             $userRank =  "anonyme";
+            session_cache_expire('private_no_expire, must-revalidate');
             session_start();
 
             if (isset($_SESSION['user'] ))

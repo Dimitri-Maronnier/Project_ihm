@@ -11,18 +11,18 @@
     <title> Gamiato </title>
 </head>
 <body>
-    <?php
-    include_once 'header.php';
-    ?>
+<?php
+include_once 'header.php';
+?>
 
 <div class="container jumbotron">
     <?php
     		if(isset($_GET['id']))
     		{
     			$id=$_GET['id'];
-                $reponse = $mysql->query('SELECT * FROM article WHERE id='.$_GET['id']); 
+                $reponse = $mysql->query('SELECT * FROM article WHERE id='.$id); 
                 $donnees = $reponse->fetch();
-                        echo '<div class = "container article-container-main" id="1" onclick="articleClick()">';
+                        echo '<div class = "container article-container-main" id="1">';
                         echo '<aside class="aside1">' . htmlspecialchars(utf8_encode($donnees['date'])).'</aside>';
 
                         echo '<h2>' . htmlspecialchars(utf8_encode($donnees['title'])).'</h2>';
@@ -34,6 +34,52 @@
 
     ?>
 </div>
+
+<div class="container jumbotron">
+    <?php
+    $reponse = $mysql->query('SELECT * FROM commentary WHERE isArticle=1 AND id_A="'.$id.'"');
+     while ($donnees = $reponse->fetch())
+    {
+        echo '<div class = "container article-container-main" id="1"">';
+      
+        if ($userRank== "administrateur" or (isset($_SESSION['user']) and $_SESSION['user'] ==  $donnees['username']))
+        {
+            echo '<div class="b_ar">';
+            echo '<form  method="post">';
+            echo '<a href="modify.php?id='.$donnees['id'].'" class="bouton_ar" ><span class="glyphicon glyphicon-pencil" aria-hidden="true" ></span></a>
+            <a href="delete.php?id='.$donnees['id'].'" class="bouton_ar" ><span class="glyphicon glyphicon-trash" aria-hidden="true"></span></a>';
+            echo '</form>';
+            echo '</div>';
+        }
+        
+        echo '<aside class="aside1">' . htmlspecialchars(utf8_encode($donnees['date'])).'</aside>';
+
+        echo '<header>' . htmlspecialchars(utf8_encode($donnees['username'])).'</header>';
+        echo '<article class="article">' . htmlspecialchars(utf8_encode($donnees['comment'])).'</article>';
+        echo '</div>';
+
+    }
+
+
+    ?>
+
+</div>
+<?php
+if ($userRank != "anonyme")    
+{
+?>
+    <div class="container jumbotron">
+        <form action="post.php?isArticle=1&id=<?php echo $id ?>&video=""" method="post">
+        <div class="form-group">
+        <label for="comment">Comment:</label>
+        <textarea class="form-control" rows="5" id="content" name="content"></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary">Comment</button>
+        </form>
+    </div>
+<?php
+}
+?>
 
 
 <!-- Chargement des scripts -->

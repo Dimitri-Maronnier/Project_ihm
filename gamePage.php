@@ -155,15 +155,15 @@
 
 
                 <div id="sectionVideo" class="tab-pane fade container article-container">
-            
-                
-                  <a href="videoPage.php?video=otVk3EEjgd8">
-                    <img src="http://i1.ytimg.com/vi/otVk3EEjgd8/default.jpg" alt="miniature" />
-                  </a>
-                  <a href="videoPage.php?video=CNM6o9um1dc">
-                    <img src="http://i1.ytimg.com/vi/CNM6o9um1dc/default.jpg" alt="miniature" />
-                  </a>
-             
+                <?php
+                $reponse = $mysql->query('SELECT * FROM videos WHERE game="'.$donnees['title'].'"');
+                while ($v_donnees = $reponse->fetch())
+                {
+                    echo '<a href="videoPage.php?video='.$v_donnees['url'].'">';
+                        echo '<img src="http://i1.ytimg.com/vi/'.$v_donnees['url'].'/default.jpg" alt="miniature" />';
+                    echo '</a>';
+                }
+                ?>
                 </div>
             </div>
 

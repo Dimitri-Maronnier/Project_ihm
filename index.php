@@ -84,12 +84,12 @@
                 echo '<img src="img/' . htmlspecialchars(utf8_encode($donnees['img'])).'" alt="Art view">';
                 echo '<article class="article-min">' . htmlspecialchars(utf8_encode(substr($donnees['content'],0,900))).'</article>';
                 if($donnees['type']=="new"){
-                    echo '<form action="articlePage.php?id='.$donnees['id'].'" method="post">';
+                    echo '<a href="articlePage.php?id='.$donnees['id'].'"><button type="submit" class="btn btn-lg btn-primary btn-block" >Learn More</button></a>';
                 }else{
-                    echo '<form action="gamePage.php?game='.$donnees['game'].'&target='.$donnees['type'].'" method="post">';
+                    echo '<a href="gamePage.php?game='.$donnees['game'].'&target='.$donnees['type'].'"><button type="submit" class="btn btn-lg btn-primary btn-block" >Learn More</button></a>';
                 }
-                echo '<button type="submit" class="btn btn-lg btn-primary btn-block" >Learn More</button>';
-                echo'</form>';
+                
+               
                 echo '</div>';
             }
             ?>
