@@ -75,7 +75,6 @@ if(isset($_GET['target'])){
 if(isset($_GET['filter'])){
     $filter = $_GET['filter'];
 }
-
 ?>
 
 <div class="container" id="main-container">
@@ -97,13 +96,11 @@ if(isset($_GET['filter'])){
                      $reponse = $mysql->query('SELECT * FROM article WHERE isGame='.$target.' AND type='.$filter.' ORDER BY date DESC');
                 }
             }
-
              while ($donnees = $reponse->fetch())
             {
                 
                     echo '<div class = "article-container" id="1"">';
                     echo '<aside class="aside1">' . htmlspecialchars(utf8_encode($donnees['date'])).'</aside>';
-
                     echo '<header>' . htmlspecialchars(utf8_encode($donnees['title'])).'</header>';
                     echo '<img src="img/' . htmlspecialchars(utf8_encode($donnees['img'])).'" alt="Art view">';
                     echo '<article class="article-min">' . htmlspecialchars(utf8_encode(substr($donnees['content'],0,900))).'</article>';
@@ -123,7 +120,7 @@ if(isset($_GET['filter'])){
      
         </div>
 
-        <div id="hot-news">
+        <div class="container" id="hot-news">
             <h1 class="title">Hot News On the Grill</h1>
         </div>
     </div>

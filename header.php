@@ -44,18 +44,13 @@
 
             <ul class="nav navbar-nav navbar-right">
             <?php
-
-
             include_once 'includes/db_connect.php';
-
             //initialisation de la variable rang de l'utilisateur
             $userRank =  "anonyme";
             session_cache_expire('private_no_expire, must-revalidate');
             session_start();
-
             if (isset($_SESSION['user'] ))
             {
-
                 echo '<li><a href="#"> Welcome '.$_SESSION['user'].'</a></li>';
                 echo '<li><a href="logout.php">Log Out</a></li>';
                 //sauvegarde du rang de l'utilisateur
@@ -74,15 +69,14 @@
 
                 <?php
             }
-
             ?>
 
 
 
             </ul>
-            <form class="navbar-form navbar-right">
+            <form action="research.php" class="navbar-form navbar-right" method="post">
                 <div class="form-group">
-                    <input type="text" class="form-control" placeholder="Search">
+                    <input type="text" class="form-control" placeholder="Search" name="request">
                 </div>
                 <button type="submit" class="btn btn-default"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></button>
             </form>
