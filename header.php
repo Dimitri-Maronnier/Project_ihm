@@ -19,10 +19,10 @@
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="true">Game<span class="caret"></span></a>
                     <ul class="dropdown-menu">
-                        <li><a href="#">Review</a></li>
-                        <li><a href="#">Test</a></li>
+                        <li><a href='index.php?target=1&filter="review"'>Review</a></li>
+                        <li><a href='index.php?target=1&filter="test"'>Test</a></li>
                         <li role="separator" class="divider"></li>
-                        <li><a href="#">News</a></li>
+                        <li><a href='index.php?target=1&filter="new"'>News</a></li>
                         <li role="separator" class="divider"></li>
                         <li><a href="#">Sales</a></li>
                     </ul>
@@ -30,10 +30,10 @@
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Hardware<span class="caret"></span></a>
                     <ul class="dropdown-menu">
-                        <li><a href="#">Review</a></li>
-                        <li><a href="#">Test/Benchmark</a></li>
+                        <li><a href='index.php?target=0&filter="review"'>Review</a></li>
+                        <li><a href='index.php?target=0&filter="test"'>Test/Benchmark</a></li>
                         <li role="separator" class="divider"></li>
-                        <li><a href="#">News</a></li>
+                        <li><a href='index.php?target=0&filter="new"'>News</a></li>
                         <li role="separator" class="divider"></li>
                         <li><a href="#">Sales</a></li>
                     </ul>

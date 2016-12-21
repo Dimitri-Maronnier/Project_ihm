@@ -66,7 +66,17 @@
     </a>
 </div><!-- /.carousel -->
 
+<?php
+$filter= "";
+$target = "";
+if(isset($_GET['target'])){
+    $target = $_GET['target'];
+}
+if(isset($_GET['filter'])){
+    $filter = $_GET['filter'];
+}
 
+?>
 
 <div class="container" id="main-container">
 
@@ -74,23 +84,38 @@
         <div class="container" id="all-article-container">
 
             <?php
-            $reponse = $mysql->query('SELECT * FROM article WHERE 1 ORDER BY date DESC');
+            if($target == ""){
+                if($filter==""){
+                    $reponse = $mysql->query('SELECT * FROM article WHERE 1 ORDER BY date DESC');
+                }else{
+                     $reponse = $mysql->query('SELECT * FROM article WHERE type='.$filter.' ORDER BY date DESC');
+                }
+            }else{
+                if($filter==""){
+                    $reponse = $mysql->query('SELECT * FROM article WHERE isGame='.$target.' ORDER BY date DESC');
+                }else{
+                     $reponse = $mysql->query('SELECT * FROM article WHERE isGame='.$target.' AND type='.$filter.' ORDER BY date DESC');
+                }
+            }
+
              while ($donnees = $reponse->fetch())
             {
-                echo '<div class = "container article-container" id="1"">';
-                echo '<aside class="aside1">' . htmlspecialchars(utf8_encode($donnees['date'])).'</aside>';
-
-                echo '<header>' . htmlspecialchars(utf8_encode($donnees['title'])).'</header>';
-                echo '<img src="img/' . htmlspecialchars(utf8_encode($donnees['img'])).'" alt="Art view">';
-                echo '<article class="article-min">' . htmlspecialchars(utf8_encode(substr($donnees['content'],0,900))).'</article>';
-                if($donnees['type']=="new"){
-                    echo '<a href="articlePage.php?id='.$donnees['id'].'"><button type="submit" class="btn btn-lg btn-primary btn-block" >Learn More</button></a>';
-                }else{
-                    echo '<a href="gamePage.php?game='.$donnees['game'].'&target='.$donnees['type'].'"><button type="submit" class="btn btn-lg btn-primary btn-block" >Learn More</button></a>';
-                }
                 
-               
-                echo '</div>';
+                    echo '<div class = "container article-container" id="1"">';
+                    echo '<aside class="aside1">' . htmlspecialchars(utf8_encode($donnees['date'])).'</aside>';
+
+                    echo '<header>' . htmlspecialchars(utf8_encode($donnees['title'])).'</header>';
+                    echo '<img src="img/' . htmlspecialchars(utf8_encode($donnees['img'])).'" alt="Art view">';
+                    echo '<article class="article-min">' . htmlspecialchars(utf8_encode(substr($donnees['content'],0,900))).'</article>';
+                    if($donnees['type']=="new"){
+                        echo '<a href="articlePage.php?id='.$donnees['id'].'"><button type="submit" class="btn btn-lg btn-primary btn-block" >Learn More</button></a>';
+                    }else{
+                        echo '<a href="gamePage.php?game='.$donnees['game'].'&target='.$donnees['type'].'"><button type="submit" class="btn btn-lg btn-primary btn-block" >Learn More</button></a>';
+                    }
+                    
+                   
+                    echo '</div>';
+                
             }
             ?>
 
