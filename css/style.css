@@ -3,9 +3,6 @@
 	src: url('font/karma future.ttf') format("truetype");
 }
 
-body{
-	margin-top: 50px;
-}
 
 /* NAVBAR */
 /*_____________________________________________*/
@@ -156,6 +153,7 @@ body{
 .article-container{
 	border: 1px solid #555;
 	margin-bottom:25px;
+	border-radius: 6px;
 }
 
 .article-container-lil{

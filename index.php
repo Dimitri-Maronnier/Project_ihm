@@ -80,8 +80,8 @@ if(isset($_GET['filter'])){
 
 <div class="container" id="main-container">
 
-    <div class="container" id="sub-container">
-        <div class="container" id="all-article-container">
+    <div id="sub-container">
+        <div id="all-article-container">
 
             <?php
             if($target == ""){
@@ -101,7 +101,7 @@ if(isset($_GET['filter'])){
              while ($donnees = $reponse->fetch())
             {
                 
-                    echo '<div class = "container article-container" id="1"">';
+                    echo '<div class = "article-container" id="1"">';
                     echo '<aside class="aside1">' . htmlspecialchars(utf8_encode($donnees['date'])).'</aside>';
 
                     echo '<header>' . htmlspecialchars(utf8_encode($donnees['title'])).'</header>';
@@ -123,7 +123,7 @@ if(isset($_GET['filter'])){
      
         </div>
 
-        <div class="container" id="hot-news">
+        <div id="hot-news">
             <h1 class="title">Hot News On the Grill</h1>
         </div>
     </div>
